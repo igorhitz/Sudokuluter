@@ -2,23 +2,36 @@ import sys ### For printing inline
 from math import sqrt
 
 class Sudoku:
-	"""This class is capable of solving a given sudoku in a lists of a list format."""
+	""" This class is capable of solving a given sudoku in a lists of a list format.
+
+	Attributes:
+		size = size of sudoku board
+		game = list of lists of the game
+		box = size of the box 
+
+	"""
 
 	def __init__(self, game = None, size = 9):
-		"""Class constructor."""
+		""" Class constructor.
+
+		"""
 		self.size = size
 		self.box = int(sqrt(size))
 		self.game = game
 
 	def solve(self):
-		"""Try to solve the game using backtrack."""
+		""" Try to solve the game using backtrack.
+
+		"""
 		if self.backtrack() == True:
 			return True
 		print "Impossible to solve"
 		return False
 
 	def backtrack(self):
-		"""Backtracking."""
+		""" Backtracking.
+
+		"""
 		succeeded, row, col = self.findEmpty()
 		if not succeeded:
 			return True
@@ -31,7 +44,9 @@ class Sudoku:
 		return False
 
 	def findEmpty(self):
-		"""Find empty cell in grid."""
+		""" Find empty cell in grid.
+
+		"""
 		for i in range(0, self.size):
 			for k in range(0, self.size):
 				if self.game[i][k] == 0:
@@ -39,7 +54,9 @@ class Sudoku:
 		return False, -1, -1
 
 	def checkCandidate(self, i, row, col):
-		"""Check if i number can be in the grid at row and col."""
+		""" Check if i number can be in the grid at row and col.
+
+		"""
 		for k in range(0, self.size):
 			if self.game[row][k] == i:
 				return False
@@ -52,7 +69,9 @@ class Sudoku:
 		return True
 
 	def printOutput(self):
-		"""Print result matrix."""
+		""" Print result matrix.
+
+		"""
 		for i in range(0, self.size):
 			for k in range(0, self.size):
 				sys.stdout.write(str(self.game[i][k])+ " ")
