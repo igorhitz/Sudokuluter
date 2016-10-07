@@ -1,5 +1,4 @@
 # Sudokuluter
-----
 
 ## About
 Project based in solving Sudoku puzzle from images. 
@@ -12,13 +11,15 @@ You should have
 	opencv
 
 Now, just type
+
 	python sudoku.py /path/to/your/picture
+
 If the puzzle is correctly recognized and there is a solution to the puzzle, the solution will pop out soon. Otherwise it throws a error.
 
----
+----
 # Contribution
 
-Sudokuluter is a idealized project: even if there's already a solution online. Coding style and coding practice are being trained by the developers.
+Sudokuluter is a idealized project: even if there's already a solution online this should be completed. Coding style and coding practice are being trained by the developers.
 
 ### General Rules
 * line width: 100 characters
